@@ -1,0 +1,11 @@
+.run-horatio {
+    @extend .hide-text;
+    display: block;
+    background: image-url("run-horatio.svg") no-repeat center / contain;
+    width: 9.6875rem;
+    height: 3.75rem;
+    position: absolute;
+    bottom: $baseline;
+    left: 50%;
+    margin-left: -4.84375rem;
+}

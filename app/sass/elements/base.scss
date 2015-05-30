@@ -1,0 +1,52 @@
+// Some base styles
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-size: 1em;
+    line-height: $baseline;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Karla", Helvetica, Arial, sans-serif;
+    color: $black;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-size: 1em;
+    color: $white;
+}
+
+a {
+    @include link-colors(hotpink, hotpink, hotpink, hotpink);
+    background: transparent;
+    outline: none;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: $baseline / 4;
+    height: $baseline / 4;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+    border: 0;
+    pointer-events: none;
+    &::selection {
+        background: transparent;
+    }
+}
+
+button:focus {
+    outline: none;
+}

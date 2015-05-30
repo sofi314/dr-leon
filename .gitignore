@@ -1,0 +1,12 @@
+node_modules/
+app/components/
+dist/
+docs/
+*.css
+*.css.map
+*.xml
+_SpecRunner.html
+.grunt
+app/uploads
+app/uikit
+.DS_Store

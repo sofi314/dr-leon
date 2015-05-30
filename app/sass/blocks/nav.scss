@@ -1,0 +1,15 @@
+.nav {
+    display: flex;
+}
+
+.nav a {
+    color: $pink;
+    background: $white;
+    display: block;
+    height: $baseline * 2;
+    line-height: $baseline * 2;
+    margin-left: $baseline / 2;
+    text-transform: uppercase;
+    padding: 0 $baseline / 2;
+    font-weight: 900;
+}

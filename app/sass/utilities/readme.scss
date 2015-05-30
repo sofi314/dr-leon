@@ -1,0 +1,83 @@
+// ROUGH STUFF TO BE WORKED ON!!!!!
+
+a {
+    color: rgb(195, 51, 51);
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+    background: image-url("web-starter-kit/services.svg");
+}
+
+nav {
+    width: $baseline * 9;
+    background: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    height: 100%;
+}
+
+.nav__link {
+    padding: $baseline / 1.5 $baseline;
+    border-bottom: 1px solid #222;
+    position: relative;
+    font-weight: 900;
+    &:before {
+        @extend .pseudo-element;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: $baseline / 2 0 $baseline / 2 $baseline / 2.3;
+        border-color: transparent transparent transparent black;
+        right: 0;
+        top: $baseline / 1.5;
+        transition: all ease .2s;
+        z-index: -5;
+        position: absolute;
+    }
+}
+
+.nav__version {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: $baseline / 1.5 $baseline;
+    margin-bottom: 0;
+    font-size: .875em;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY($baseline);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+section {
+    margin-left: 12rem;
+    padding: $baseline 15%;
+}
+
+.nav__link--active {
+    background: black;
+    &:before {
+        right: -$baseline / 2.3;
+    }
+}
+
+.nav__link {
+    display: block;
+    color: white !important;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    font-weight: 300;
+}

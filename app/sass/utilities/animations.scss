@@ -1,0 +1,30 @@
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+    }
+    39% {
+        transform: rotateY(0deg);
+    }
+    40% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    90% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}

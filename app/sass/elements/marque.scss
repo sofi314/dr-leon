@@ -1,0 +1,8 @@
+.marque {
+    @extend .hide-text;
+    display: block;
+    width: $baseline * 4;
+    height: $baseline * 4;
+    background: image-url("marque.svg") no-repeat center / contain;
+    animation: spin 10s linear infinite;
+}

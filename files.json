@@ -1,0 +1,4 @@
+[
+    "components/angular/angular.js",
+    "components/angular-route/angular-route.js"
+]
