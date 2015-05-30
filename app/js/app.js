@@ -27335,55 +27335,7 @@ app.controller('aboutCtrl', ['$scope', "$location", "Config", "$http", function(
 
 'use strict';
 
-app.controller('homeCtrl', ['$scope', function($scope){
-
-    $scope.title = 'home';
-
-}]);
-'use strict';
-
-app.controller('portalCtrl', ['$scope', 'GoogleSpreadsheets', function($scope, GoogleSpreadsheets){
-
-    var name = localStorage.getItem("lastname");
-
-    $scope.title = 'Welcome to the Portal , ' + name;
-
-
-
-
-var parse = function(entry) {
-      var category = entry['gsx$category']['$t'];
-      var description = entry['gsx$description']['$t'];
-      var title = entry['gsx$title']['$t'];
-      var url = entry['gsx$url']['$t'];
-      var yo = entry['gsx$yo']['$t'];
-      return {
-        category: category,
-        description: description,
-        title: title,
-        url: url,
-        yo: yo
-      };
-    }
-
-
-    var people = [];
-
-
-    GoogleSpreadsheets.getData().then(function(response){
-     var entries = response['feed']['entry'];
-      entries.forEach(function(data) {
-        console.log(data.gsx$person.$t);
-      });
-    })
-
-
-
-}]);
-
-'use strict';
-
-app.controller('questionCtrl', ['$scope', function($scope){
+app.controller('betterCtrl', ['$scope', function($scope){
 
     $scope.title = "Question";
 
@@ -27391,10 +27343,24 @@ app.controller('questionCtrl', ['$scope', function($scope){
 
 'use strict';
 
+app.controller('homeCtrl', ['$scope', function($scope){
+
+    $scope.title = 'home';
+
+}]);
+'use strict';
+
+app.controller('ticketsCtrl', ['$scope', function($scope){
+
+    $scope.title = 'home';
+
+}]);
+'use strict';
+
 app.directive('bgVideo', function($location) {
     return {
         restrict: 'E',
-        template: '<video id="bgVideo" autoplay loop poster="polina.jpg" class="bg-video"><source type="video/webm"><source src="video/leon.mp4" type="video/mp4"></video><button ng-click="toggleSound()" class="bg-video__toggle-sound">Toggle Audio</button>',
+        templateUrl: 'partials/bg-video.html',
         link: function($scope, iElm, iAttrs, controller) {
             var video = document.getElementById('bgVideo');
             $scope.toggleSound = function() {

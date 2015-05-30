@@ -18,8 +18,13 @@
     top: $baseline;
     right: $baseline;
     border: 0;
-    background: red;
+    background-size: contain;
+    background-image: image-url("mute-op.svg");
     padding: 0;
     width: $baseline;
     height: $baseline;
+}
+
+.bg-video__toggle-sound--muted {
+    background-image: image-url("mute-cl.svg");
 }
