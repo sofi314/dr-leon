@@ -11,3 +11,15 @@
     background: url(polina.jpg) no-repeat;
     background-size: cover;
 }
+
+.bg-video__toggle-sound {
+    @extend .hide-text;
+    position: absolute;
+    top: $baseline;
+    right: $baseline;
+    border: 0;
+    background: red;
+    padding: 0;
+    width: $baseline;
+    height: $baseline;
+}

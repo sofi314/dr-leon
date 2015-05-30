@@ -27314,15 +27314,13 @@ app.config(function($routeProvider) {
         templateUrl : 'partials/about.html',
         controller  : 'aboutCtrl'
     })
-    .when('/portal', {
-        templateUrl : 'partials/portal.html',
-        controller  : 'portalCtrl'
+    .when('/tickets', {
+        templateUrl : 'partials/tickets.html',
+        controller  : 'ticketsCtrl'
     })
-    .when('/question/:questionNumber/', {
-        controller  : 'questionCtrl',
-        templateUrl : function(params) {
-            return 'views/task-' + params.questionNumber + '.html';
-        }
+    .when('/better', {
+        templateUrl : 'partials/better.html',
+        controller  : 'betterCtrl'
     })
     .otherwise({
         redirectTo  : '/'
@@ -27396,8 +27394,14 @@ app.controller('questionCtrl', ['$scope', function($scope){
 app.directive('bgVideo', function($location) {
     return {
         restrict: 'E',
-        replace: 'true',
-        template: '<video autoplay loop poster="polina.jpg" class="bg-video"><source type="video/webm"><source src="video/leon.mp4" type="video/mp4"></video>'
+        template: '<video id="bgVideo" autoplay loop poster="polina.jpg" class="bg-video"><source type="video/webm"><source src="video/leon.mp4" type="video/mp4"></video><button ng-click="toggleSound()" class="bg-video__toggle-sound">Toggle Audio</button>',
+        link: function($scope, iElm, iAttrs, controller) {
+            var video = document.getElementById('bgVideo');
+            $scope.toggleSound = function() {
+                video.muted = !video.muted;
+                $scope.muted = !$scope.muted;
+            }
+        }
     }
 });
 'use strict';

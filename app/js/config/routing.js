@@ -11,9 +11,9 @@ app.config(function($routeProvider) {
         templateUrl : 'partials/about.html',
         controller  : 'aboutCtrl'
     })
-    .when('/book', {
-        templateUrl : 'partials/book.html',
-        controller  : 'bookCtrl'
+    .when('/tickets', {
+        templateUrl : 'partials/tickets.html',
+        controller  : 'ticketsCtrl'
     })
     .when('/better', {
         templateUrl : 'partials/better.html',

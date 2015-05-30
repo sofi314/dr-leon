@@ -36,7 +36,8 @@ module.exports = function (grunt) {
                         "./app/js/drLeon.js",
                         "./app/js/**/*.js",
                         "./app/js/**/**/*.js",
-                        "./app/js/**/**/**/*.js"
+                        "./app/js/**/**/**/*.js",
+                        "!/app/js/app.js"
                     ]
                 }
             }
@@ -82,12 +83,7 @@ module.exports = function (grunt) {
             Scrubadubdub
         */
         clean: {
-            beforeBuild: {
-                src: ["<%= config.outputDir %>"]
-            },
-            afterBuild: {
-                src: ["<%= config.outputDir %>/js/templates.js"]
-            }
+            src: ["app/js/app.js"]
         },
         /*
             Copy asset files to distribution directory
@@ -196,8 +192,13 @@ module.exports = function (grunt) {
               tasks: ["sass:development", "autoprefixer"]
             }
             ,javascript: {
-              files: ["app/partials/{,*/}*.html","app/js/{,*/}*.js","app/js/**/{,*/}*.js", "./test/unit/{,*/}*.js", "./test/unit/**/{,*/}*.js"],
-              tasks: ["jasmine"]
+                files: [
+                    "./app/js/drLeon.js",
+                    "./app/js/**/*.js",
+                    "./app/js/**/**/*.js",
+                    "./app/js/**/**/**/*.js"
+                ],
+                tasks: ["clean", "concat"]
             }
         },
         /*
@@ -224,11 +225,11 @@ module.exports = function (grunt) {
     require("load-grunt-tasks")(grunt);
 
     grunt.registerTask("server", [
-        "jasmine",
+        "concat",
         "sass:development",
         "autoprefixer",
         "connect:server",
-        "watch:css"
+        "watch"
     ]);
 
     grunt.registerTask("serverjs", [
