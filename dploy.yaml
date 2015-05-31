@@ -1,0 +1,10 @@
+live:
+    scheme: ftp
+    host: fyvie.footholds.net
+    port: 21
+    user: sofiicou
+    pass: U210tmOj5t
+    check: true
+    path:
+        local: app/
+        remote: drleon.org/
