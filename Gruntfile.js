@@ -30,14 +30,13 @@ module.exports = function (grunt) {
         concat: {
             dist: {
                 files: {
-                    "app/js/app.js": [
+                    "app/js/dist/app.js": [
                         "components/angular/angular.js",
                         "components/angular-route/angular-route.js",
-                        "./app/js/drLeon.js",
-                        "./app/js/**/*.js",
-                        "./app/js/**/**/*.js",
-                        "./app/js/**/**/**/*.js",
-                        "!/app/js/app.js"
+                        "./app/js/dev/*.js",
+                        "./app/js/dev/**/*.js",
+                        "./app/js/dev/**/**/*.js",
+                        "./app/js/dev/**/**/**/*.js"
                     ]
                 }
             }
@@ -119,10 +118,10 @@ module.exports = function (grunt) {
         */
         jasmine: {
             src: [
-                //"./dist/js/app.js"
-                "./app/js/**/*.js",
-                "./app/js/**/**/*.js",
-                "./app/js/**/**/**/*.js"
+                // "./app/js/dist/app.js"
+                // "./app/js/dev/**/*.js",
+                // "./app/js/dev/**/**/*.js",
+                // "./app/js/dev/**/**/**/*.js"
             ],
             options: {
                 keepRunner: true,

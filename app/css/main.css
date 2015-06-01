@@ -20,7 +20,7 @@
           transform: translate(-50%, -50%); }
 
 /* line 22, /Volumes/Storage/Projects/dr-leon/app/sass/utilities/extends */
-.pseudo-element {
+.pseudo-element, .bg-video:after {
   position: absolute;
   display: block;
   content: ''; }
@@ -476,19 +476,34 @@ td, th {
 /* line 13, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
 html, button, input, select, textarea {
   font-size: 1em;
-  line-height: 1.5rem;
   -webkit-font-smoothing: antialiased;
   font-family: "Karla", Helvetica, Arial, sans-serif;
   color: #190d0f; }
+  @media only screen and (min-width: 40rem) {
+    html, button, input, select, textarea {
+      font-size: 1.125em; } }
+  @media only screen and (min-width: 90rem) {
+    html, button, input, select, textarea {
+      font-size: 1.3125em; } }
 
-/* line 21, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
+/* line 27, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
 body {
   height: 100%;
-  margin: 0;
-  font-size: 1em;
-  color: white; }
+  line-height: 1.5rem;
+  margin: 0 auto;
+  max-width: 50rem;
+  margin-top: 3rem;
+  text-align: justify;
+  color: white;
+  width: 90%; }
+  @media only screen and (min-width: 40rem) {
+    body {
+      width: 80%; } }
+  @media only screen and (min-width: 60rem) {
+    body {
+      width: 70%; } }
 
-/* line 28, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
+/* line 45, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
 a {
   color: hotpink;
   background: transparent;
@@ -504,24 +519,32 @@ a {
   a:active {
     color: hotpink; }
 
-/* line 35, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
+/* line 52, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
 ::-webkit-scrollbar {
   width: 0.375rem;
   height: 0.375rem; }
 
-/* line 40, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
+/* line 57, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
+::-moz-selection {
+  color: white;
+  background: #ff768f; }
+::selection {
+  color: white;
+  background: #ff768f; }
+
+/* line 62, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
 img {
   vertical-align: middle;
   max-width: 100%;
   border: 0;
   pointer-events: none; }
-  /* line 45, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
+  /* line 67, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
   img::-moz-selection {
     background: transparent; }
   img::selection {
     background: transparent; }
 
-/* line 50, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
+/* line 72, /Volumes/Storage/Projects/dr-leon/app/sass/elements/base */
 button:focus {
   outline: none; }
 
@@ -530,39 +553,56 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5rem;
-  font-size: 2em; }
+  font-size: 2.125em;
+  line-height: 1em; }
 
 /* line 1, /Volumes/Storage/Projects/dr-leon/app/sass/elements/bg-video */
 .bg-video {
   position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -100; }
+  /* line 8, /Volumes/Storage/Projects/dr-leon/app/sass/elements/bg-video */
+  .bg-video:after {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: url("http://portisla.com/img/raster.png"); }
+
+/* line 19, /Volumes/Storage/Projects/dr-leon/app/sass/elements/bg-video */
+.bg-video__video {
   top: 50%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
+  position: absolute;
   width: auto;
   height: auto;
-  z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
       -ms-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
-  background: url(polina.jpg) no-repeat;
+  background: url("../images/bg.jpg") no-repeat;
   background-size: cover; }
 
-/* line 15, /Volumes/Storage/Projects/dr-leon/app/sass/elements/bg-video */
+/* line 32, /Volumes/Storage/Projects/dr-leon/app/sass/elements/bg-video */
 .bg-video__toggle-sound {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
   border: 0;
-  background-size: contain;
-  background-image: url("../images/mute-op.svg");
+  background: url("../images/mute-op.svg") no-repeat center/contain;
   padding: 0;
   width: 1.5rem;
-  height: 1.5rem; }
+  height: 1.5rem;
+  z-index: 10; }
 
-/* line 28, /Volumes/Storage/Projects/dr-leon/app/sass/elements/bg-video */
+/* line 45, /Volumes/Storage/Projects/dr-leon/app/sass/elements/bg-video */
 .bg-video__toggle-sound--muted {
-  background-image: url("../images/mute-cl.svg"); }
+  background: url("../images/mute-cl.svg") no-repeat center/contain; }
 
 /* line 1, /Volumes/Storage/Projects/dr-leon/app/sass/elements/run-horatio */
 .run-horatio {
@@ -570,10 +610,16 @@ h1 {
   background: url("../images/run-horatio.svg") no-repeat center/contain;
   width: 9.6875rem;
   height: 3.75rem;
-  position: absolute;
+  position: relative;
   bottom: 1.5rem;
   left: 50%;
   margin-left: -4.84375rem; }
+  @media only screen and (max-width: 59.9375rem) {
+    .run-horatio {
+      margin-top: 1.5rem; } }
+  @media only screen and (min-width: 60rem) {
+    .run-horatio {
+      position: absolute; } }
 
 /* line 1, /Volumes/Storage/Projects/dr-leon/app/sass/elements/be-better */
 .be-better {
@@ -593,42 +639,53 @@ h1 {
   background: url("../images/marque.svg") no-repeat center/contain;
   -webkit-animation: spin 10s linear infinite;
           animation: spin 10s linear infinite; }
+  @media only screen and (max-width: 39.9375rem) {
+    .marque {
+      margin: 0 auto;
+      margin-bottom: 1.5rem; } }
 
 /* line 1, /Volumes/Storage/Projects/dr-leon/app/sass/blocks/header */
 .header {
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 3rem; }
+  margin-bottom: 1.5rem; }
+  @media only screen and (min-width: 40rem) {
+    .header {
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin-bottom: 3rem; } }
 
-/* line 1, /Volumes/Storage/Projects/dr-leon/app/sass/blocks/nav */
-.nav {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
+@media only screen and (min-width: 40rem) {
+  .nav {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; } }
 
-/* line 5, /Volumes/Storage/Projects/dr-leon/app/sass/blocks/nav */
+/* line 7, /Volumes/Storage/Projects/dr-leon/app/sass/blocks/nav */
 .nav a {
   color: #ff768f;
   background: white;
   display: block;
-  height: 3rem;
-  line-height: 3rem;
-  margin-left: 0.75rem;
+  height: 2.25rem;
+  text-align: center;
+  line-height: 2.25rem;
   text-transform: uppercase;
   padding: 0 0.75rem;
   font-weight: 900; }
+  @media only screen and (max-width: 39.9375rem) {
+    .nav a {
+      width: 100%;
+      margin-bottom: 0.75rem; } }
+  @media only screen and (min-width: 40rem) {
+    .nav a {
+      margin-left: 0.75rem;
+      width: auto; } }
 
 /* line 18, /Volumes/Storage/Projects/dr-leon/app/sass/main.scss */
-body {
-  width: 62%;
-  margin: 0 auto;
-  max-width: 62.5rem;
-  margin-top: 3rem;
-  text-align: justify; }
+.mobile {
+  background: url("../images/bg.jpg") no-repeat fixed center/cover; }
