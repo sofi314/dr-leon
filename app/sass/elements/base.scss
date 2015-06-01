@@ -25,6 +25,7 @@ textarea {
 }
 
 body {
+    background: image-url("bg.jpg") no-repeat fixed center / cover;
     height: 100%;
     line-height: $baseline;
     margin: 0 auto;
