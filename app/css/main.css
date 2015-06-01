@@ -574,7 +574,7 @@ h1 {
     position: absolute;
     background: url("http://portisla.com/img/raster.png"); }
   /* line 17, /Volumes/Storage/Projects/dr-leon/app/sass/elements/bg-video */
-  .videoautoplay .bg-video {
+  .no-videoautoplay .bg-video {
     display: none; }
 
 /* line 22, /Volumes/Storage/Projects/dr-leon/app/sass/elements/bg-video */

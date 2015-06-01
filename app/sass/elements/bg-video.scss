@@ -14,7 +14,7 @@
         position: absolute;
         background: url("http://portisla.com/img/raster.png");
     }
-    .videoautoplay & {
+    .no-videoautoplay & {
         display: none;
     }
 }
