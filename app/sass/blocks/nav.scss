@@ -1,15 +1,26 @@
 .nav {
-    display: flex;
+    @include min-width($baby) {
+        display: flex;
+    }
 }
 
 .nav a {
     color: $pink;
     background: $white;
     display: block;
-    height: $baseline * 2;
-    line-height: $baseline * 2;
-    margin-left: $baseline / 2;
+    height: $baseline * 1.5;
+    text-align: center;
+    line-height: $baseline * 1.5;
     text-transform: uppercase;
     padding: 0 $baseline / 2;
     font-weight: 900;
+    @include max-width($baby) {
+        width: 100%;
+        margin-bottom: $baseline / 2;
+    }
+
+    @include min-width($baby) {
+        margin-left: $baseline / 2;
+        width: auto;
+    }
 }

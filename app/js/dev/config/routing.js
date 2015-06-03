@@ -5,19 +5,19 @@ app.config(function($routeProvider) {
     $routeProvider
     .when('/', {
         templateUrl : 'partials/home.html',
-        controller  : 'homeCtrl'
+        controller  : 'pageCtrl'
     })
     .when('/about', {
         templateUrl : 'partials/about.html',
-        controller  : 'aboutCtrl'
+        controller  : 'pageCtrl'
     })
     .when('/tickets', {
         templateUrl : 'partials/tickets.html',
-        controller  : 'ticketsCtrl'
+        controller  : 'pageCtrl'
     })
     .when('/better', {
         templateUrl : 'partials/better.html',
-        controller  : 'betterCtrl'
+        controller  : 'pageCtrl'
     })
     .otherwise({
         redirectTo  : '/'

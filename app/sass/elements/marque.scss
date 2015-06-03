@@ -5,4 +5,8 @@
     height: $baseline * 4;
     background: image-url("marque.svg") no-repeat center / contain;
     animation: spin 10s linear infinite;
+    @include max-width($baby) {
+        margin: 0 auto;
+        margin-bottom: $baseline;
+    }
 }
